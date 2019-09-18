@@ -8,5 +8,6 @@ target 'TrueMotion' do
   # Pods for TrueMotion
 
 	pod 'Alamofire', '~> 5.0.0-rc.2'
+  pod 'Kingfisher'
 
 end

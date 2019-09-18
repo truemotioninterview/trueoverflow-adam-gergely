@@ -23,7 +23,7 @@ final class QuestionsViewController: UIViewController {
     }
 }
 
-extension QuestionsViewController: UITableViewDataSource {
+extension QuestionsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter?.questions.count ?? 0
@@ -33,6 +33,11 @@ extension QuestionsViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: QuestionTableViewCell.identifier, for: indexPath) as! QuestionTableViewCell
         cell.update(presenter?.questions[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        presenter?.selectQuestion(at: indexPath.row)
     }
 }
 
@@ -45,11 +50,19 @@ extension QuestionsViewController: QuestionsView {
     func updateQuestions() {
         tableView.reloadData()
     }
+    
+    func showAnswers(for question: Question) {
+        let answersVc = AnswersViewController()
+        answersVc.presenter = AnswersPresenter(view: answersVc, question: question)
+        navigationController?.pushViewController(answersVc, animated: true)
+    }
 }
 
 private extension QuestionsViewController {
     
     func initUI() {
+        title = "Open questions for JS"
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 50
         tableView.rowHeight = UITableView.automaticDimension

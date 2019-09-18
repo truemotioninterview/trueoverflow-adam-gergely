@@ -26,6 +26,11 @@ extension QuestionPresenter: QuestionViewPresenter {
     func prepareForUse() {
         getUnansweredQuestionsNumber()
     }
+    
+    func selectQuestion(at index: Int) {
+        let question = questions[index]
+        view.showAnswers(for: question)
+    }
 }
 
 private extension QuestionPresenter {

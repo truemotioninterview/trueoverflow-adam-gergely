@@ -27,6 +27,12 @@
 		7FA7AD2823321D990040E241 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7AD2723321D990040E241 /* Items.swift */; };
 		7FA7AD2C2332204A0040E241 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7AD2A2332204A0040E241 /* QuestionTableViewCell.swift */; };
 		7FA7AD2D2332204A0040E241 /* QuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7AD2B2332204A0040E241 /* QuestionTableViewCell.xib */; };
+		7FA7AD312332263C0040E241 /* AnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7AD2F2332263C0040E241 /* AnswersViewController.swift */; };
+		7FA7AD322332263C0040E241 /* AnswersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7AD302332263C0040E241 /* AnswersViewController.xib */; };
+		7FA7AD35233226730040E241 /* AnswersProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7AD34233226730040E241 /* AnswersProtocols.swift */; };
+		7FA7AD372332267F0040E241 /* AnswersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7AD362332267F0040E241 /* AnswersPresenter.swift */; };
+		7FA7AD392332278E0040E241 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7AD382332278E0040E241 /* Answer.swift */; };
+		7FA7AD3D233232260040E241 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7AD3C233232260040E241 /* UIImageView.swift */; };
 		8D48763E64D9BAADB530C993 /* Pods_TrueMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925D057AB74841A4FEFDA080 /* Pods_TrueMotion.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +59,12 @@
 		7FA7AD2723321D990040E241 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		7FA7AD2A2332204A0040E241 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		7FA7AD2B2332204A0040E241 /* QuestionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionTableViewCell.xib; sourceTree = "<group>"; };
+		7FA7AD2F2332263C0040E241 /* AnswersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersViewController.swift; sourceTree = "<group>"; };
+		7FA7AD302332263C0040E241 /* AnswersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswersViewController.xib; sourceTree = "<group>"; };
+		7FA7AD34233226730040E241 /* AnswersProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersProtocols.swift; sourceTree = "<group>"; };
+		7FA7AD362332267F0040E241 /* AnswersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersPresenter.swift; sourceTree = "<group>"; };
+		7FA7AD382332278E0040E241 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		7FA7AD3C233232260040E241 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		925D057AB74841A4FEFDA080 /* Pods_TrueMotion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrueMotion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7A23DCD96CB26F59B802987 /* Pods-TrueMotion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueMotion.release.xcconfig"; path = "Target Support Files/Pods-TrueMotion/Pods-TrueMotion.release.xcconfig"; sourceTree = "<group>"; };
 		FFC3D2FD8302FA7EE742C3D5 /* Pods-TrueMotion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueMotion.debug.xcconfig"; path = "Target Support Files/Pods-TrueMotion/Pods-TrueMotion.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +111,7 @@
 		7F549DC22332103D0091E9E2 /* TrueMotion */ = {
 			isa = PBXGroup;
 			children = (
+				7FA7AD3B233232150040E241 /* Extensions */,
 				7FA7AD0E2332150C0040E241 /* Network */,
 				7FA7AD21233219290040E241 /* Modules */,
 				7FA7AD0C2332146B0040E241 /* UI */,
@@ -120,6 +133,7 @@
 				7FA7AD08233213460040E241 /* User.swift */,
 				7FA7AD0A2332134F0040E241 /* Tag.swift */,
 				7FA7AD2723321D990040E241 /* Items.swift */,
+				7FA7AD382332278E0040E241 /* Answer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -127,6 +141,7 @@
 		7FA7AD0C2332146B0040E241 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				7FA7AD2E2332261E0040E241 /* Answers */,
 				7FA7AD0D233214700040E241 /* Questions */,
 			);
 			path = UI;
@@ -173,6 +188,7 @@
 		7FA7AD21233219290040E241 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7FA7AD33233226590040E241 /* Answers */,
 				7FA7AD22233219350040E241 /* Questions */,
 			);
 			path = Modules;
@@ -194,6 +210,32 @@
 				7FA7AD2B2332204A0040E241 /* QuestionTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		7FA7AD2E2332261E0040E241 /* Answers */ = {
+			isa = PBXGroup;
+			children = (
+				7FA7AD2F2332263C0040E241 /* AnswersViewController.swift */,
+				7FA7AD302332263C0040E241 /* AnswersViewController.xib */,
+			);
+			path = Answers;
+			sourceTree = "<group>";
+		};
+		7FA7AD33233226590040E241 /* Answers */ = {
+			isa = PBXGroup;
+			children = (
+				7FA7AD34233226730040E241 /* AnswersProtocols.swift */,
+				7FA7AD362332267F0040E241 /* AnswersPresenter.swift */,
+			);
+			path = Answers;
+			sourceTree = "<group>";
+		};
+		7FA7AD3B233232150040E241 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7FA7AD3C233232260040E241 /* UIImageView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AED2D45D5D98FFCFCD3AA530 /* Pods */ = {
@@ -265,6 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FA7AD322332263C0040E241 /* AnswersViewController.xib in Resources */,
 				7F549DCE2332103E0091E9E2 /* LaunchScreen.storyboard in Resources */,
 				7F549DCB2332103E0091E9E2 /* Assets.xcassets in Resources */,
 				7FA7AD20233218B40040E241 /* QuestionsViewController.xib in Resources */,
@@ -326,14 +369,19 @@
 				7FA7AD1C233216330040E241 /* Constants.swift in Sources */,
 				7FA7AD1F233218B40040E241 /* QuestionsViewController.swift in Sources */,
 				7FA7AD09233213460040E241 /* User.swift in Sources */,
+				7FA7AD372332267F0040E241 /* AnswersPresenter.swift in Sources */,
 				7FA7AD2823321D990040E241 /* Items.swift in Sources */,
 				7FA7AD172332150C0040E241 /* QuestionEndPoint.swift in Sources */,
+				7FA7AD35233226730040E241 /* AnswersProtocols.swift in Sources */,
 				7FA7AD2C2332204A0040E241 /* QuestionTableViewCell.swift in Sources */,
 				7FA7AD162332150C0040E241 /* RequestConvertible.swift in Sources */,
+				7FA7AD312332263C0040E241 /* AnswersViewController.swift in Sources */,
 				7FA7AD242332194B0040E241 /* QuestionsProtocols.swift in Sources */,
 				7FA7AD182332150C0040E241 /* ApiClient.swift in Sources */,
 				7FA7AD26233219990040E241 /* QuestionPresenter.swift in Sources */,
+				7FA7AD392332278E0040E241 /* Answer.swift in Sources */,
 				7FA7AD1A2332150C0040E241 /* QuestionService.swift in Sources */,
+				7FA7AD3D233232260040E241 /* UIImageView.swift in Sources */,
 				7FA7AD07233212FE0040E241 /* Question.swift in Sources */,
 				7FA7AD0B2332134F0040E241 /* Tag.swift in Sources */,
 				7F549DC42332103D0091E9E2 /* AppDelegate.swift in Sources */,

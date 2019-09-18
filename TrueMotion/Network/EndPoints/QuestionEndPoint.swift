@@ -10,24 +10,31 @@ import Foundation
 
 enum QuestionEndpoint: RequestConvertible {
 
-    case openQuestionNumber
+    case answersForQuestion(questionId: Int)
     case questions(filter: String)
     
     var url: String {
         guard var urlComponents = URLComponents(string: Constants.baseUrl) else {
             return ""
         }
-        urlComponents.path = "/\(Constants.apiVersion)/search"
+        var queryParams: [URLQueryItem] = [
+            URLQueryItem(name: "site", value: "stackoverflow"),
+            URLQueryItem(name: "order", value: "desc"),
+            URLQueryItem(name: "sort", value: "activity")
+        ]
+        
         switch self {
-        case .openQuestionNumber:
-             break
+        case .answersForQuestion(let questionId):
+            urlComponents.path = "/\(Constants.apiVersion)/questions/\(questionId)/answers"
+            queryParams.append(URLQueryItem(name: "filter", value: "!-*jbN0OSaa9u"))
         case .questions(let filter):
-            urlComponents.queryItems = [URLQueryItem(name: "intitle", value: filter),
-            URLQueryItem(name: "site", value: "stackoverflow")]
+            urlComponents.path = "/\(Constants.apiVersion)/search"
+            queryParams.append(URLQueryItem(name: "intitle", value: filter))
         }
         
+        urlComponents.queryItems = queryParams
         let url =  urlComponents.string ?? ""
-        print("\(url)")
+        print(url)
         return url
         
     }

@@ -1,5 +1,5 @@
 //
-//  Question.swift
+//  Answer.swift
 //  TrueMotion
 //
 //  Created by Adam Gergely on 9/18/19.
@@ -8,26 +8,30 @@
 
 import Foundation
 
-struct Question: Codable, CommentConvertible {
- 
+struct Answer: Codable, CommentConvertible {
     
-    let tags: [String]?
     let owner: User
-    let isAnswered: Bool
-    let answerCount: Int
-    let score: Int
+    let body: String
+    let answerId: Int
+    let questionId: Int
     let lastActivityDate: Date
     let creationDate: Date
-    let questionId: Int
-    let link: String?
-    let title: String?
+    let isAccepted: Bool
     
     
+    var title: String? {
+        return body
+    }
     var imageUrl: String? {
         return owner.profileImage
     }
     
-    var acceptionTitle: String {
-        return "Answered"
+    var isAnswered: Bool {
+        return isAccepted
     }
+    
+    var acceptionTitle: String {
+        return "Accepted"
+    }
+    
 }

@@ -11,6 +11,7 @@ import Foundation
 protocol QuestionsView: class {
     func showUnansweredQuestionsNumber(_ number: Int)
     func updateQuestions()
+    func showAnswers(for question: Question)
 }
 
 protocol QuestionViewPresenter {
@@ -20,4 +21,5 @@ protocol QuestionViewPresenter {
     init(view: QuestionsView, service: QuestionServiceProtocol)
     
     func prepareForUse()
+    func selectQuestion(at index: Int)
 }

@@ -14,7 +14,7 @@ protocol QuestionServiceProtocol {
     init(requestExecutor: RequestExecutor)
     
     func questions(filter: String, completion: @escaping (ResultType<Items<Question>>) -> Void)
-//    func getQuestions(filter: String, completion: @escaping (ResultType<[Question]>) -> Void)
+    func answers(for questionId: Int, completion: @escaping (ResultType<Items<Answer>>) -> Void)
 }
 
 struct QuestionService: QuestionServiceProtocol {
@@ -31,9 +31,9 @@ struct QuestionService: QuestionServiceProtocol {
         }
     }
     
-//    func getQuestions(filter: String, completion: @escaping (ResultType<[Question]>) -> Void) {
-//        requestExecutor.performRequest(QuestionEndpoint.questions(filter: filter)) { (result: ResultType<[Question]>) in
-//            completion(result)
-//        }
-//    }
+    func answers(for questionId: Int, completion: @escaping (ResultType<Items<Answer>>) -> Void) {
+        requestExecutor.performRequest(QuestionEndpoint.answersForQuestion(questionId: questionId)) { (result: ResultType<Items<Answer>>) in
+            completion(result)
+        }
+    }
 }
