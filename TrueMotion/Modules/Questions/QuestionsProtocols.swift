@@ -10,9 +10,12 @@ import Foundation
 
 protocol QuestionsView: class {
     func showUnansweredQuestionsNumber(_ number: Int)
+    func updateQuestions()
 }
 
 protocol QuestionViewPresenter {
+    
+    var questions: [Question] { get }
     
     init(view: QuestionsView, service: QuestionServiceProtocol)
     

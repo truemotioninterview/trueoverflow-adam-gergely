@@ -15,8 +15,8 @@ struct Question: Codable {
     let isAnswered: Bool
     let answerCount: Int
     let score: Int
-    let lastActivityDate: Int
-    let creationDate: Int
+    let lastActivityDate: Date
+    let creationDate: Date
     let questionId: Int
     let link: String?
     let title: String 

@@ -11,31 +11,49 @@ import UIKit
 final class QuestionsViewController: UIViewController {
 
     @IBOutlet weak var unAnsweredJsQuestionsNumberLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     var presenter: QuestionViewPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initUI()
         presenter?.prepareForUse()
     }
+}
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension QuestionsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter?.questions.count ?? 0
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: QuestionTableViewCell.identifier, for: indexPath) as! QuestionTableViewCell
+        cell.update(presenter?.questions[indexPath.row])
+        return cell
+    }
 }
 
 extension QuestionsViewController: QuestionsView {
     
     func showUnansweredQuestionsNumber(_ number: Int) {
         unAnsweredJsQuestionsNumberLabel.text = "\(number)"
+    }
+    
+    func updateQuestions() {
+        tableView.reloadData()
+    }
+}
+
+private extension QuestionsViewController {
+    
+    func initUI() {
+        tableView.dataSource = self
+        tableView.estimatedRowHeight = 50
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.tableFooterView = UIView()
+        tableView.register(UINib(nibName: QuestionTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: QuestionTableViewCell.identifier)
     }
 }

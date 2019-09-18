@@ -25,6 +25,8 @@
 		7FA7AD242332194B0040E241 /* QuestionsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7AD232332194B0040E241 /* QuestionsProtocols.swift */; };
 		7FA7AD26233219990040E241 /* QuestionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7AD25233219990040E241 /* QuestionPresenter.swift */; };
 		7FA7AD2823321D990040E241 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7AD2723321D990040E241 /* Items.swift */; };
+		7FA7AD2C2332204A0040E241 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA7AD2A2332204A0040E241 /* QuestionTableViewCell.swift */; };
+		7FA7AD2D2332204A0040E241 /* QuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA7AD2B2332204A0040E241 /* QuestionTableViewCell.xib */; };
 		8D48763E64D9BAADB530C993 /* Pods_TrueMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925D057AB74841A4FEFDA080 /* Pods_TrueMotion.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		7FA7AD232332194B0040E241 /* QuestionsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsProtocols.swift; sourceTree = "<group>"; };
 		7FA7AD25233219990040E241 /* QuestionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresenter.swift; sourceTree = "<group>"; };
 		7FA7AD2723321D990040E241 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		7FA7AD2A2332204A0040E241 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
+		7FA7AD2B2332204A0040E241 /* QuestionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionTableViewCell.xib; sourceTree = "<group>"; };
 		925D057AB74841A4FEFDA080 /* Pods_TrueMotion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrueMotion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7A23DCD96CB26F59B802987 /* Pods-TrueMotion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueMotion.release.xcconfig"; path = "Target Support Files/Pods-TrueMotion/Pods-TrueMotion.release.xcconfig"; sourceTree = "<group>"; };
 		FFC3D2FD8302FA7EE742C3D5 /* Pods-TrueMotion.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrueMotion.debug.xcconfig"; path = "Target Support Files/Pods-TrueMotion/Pods-TrueMotion.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 		7FA7AD0D233214700040E241 /* Questions */ = {
 			isa = PBXGroup;
 			children = (
+				7FA7AD29233220210040E241 /* Cell */,
 				7FA7AD1D233218B40040E241 /* QuestionsViewController.swift */,
 				7FA7AD1E233218B40040E241 /* QuestionsViewController.xib */,
 			);
@@ -180,6 +185,15 @@
 				7FA7AD25233219990040E241 /* QuestionPresenter.swift */,
 			);
 			path = Questions;
+			sourceTree = "<group>";
+		};
+		7FA7AD29233220210040E241 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7FA7AD2A2332204A0040E241 /* QuestionTableViewCell.swift */,
+				7FA7AD2B2332204A0040E241 /* QuestionTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		AED2D45D5D98FFCFCD3AA530 /* Pods */ = {
@@ -254,6 +268,7 @@
 				7F549DCE2332103E0091E9E2 /* LaunchScreen.storyboard in Resources */,
 				7F549DCB2332103E0091E9E2 /* Assets.xcassets in Resources */,
 				7FA7AD20233218B40040E241 /* QuestionsViewController.xib in Resources */,
+				7FA7AD2D2332204A0040E241 /* QuestionTableViewCell.xib in Resources */,
 				7F549DC92332103D0091E9E2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +328,7 @@
 				7FA7AD09233213460040E241 /* User.swift in Sources */,
 				7FA7AD2823321D990040E241 /* Items.swift in Sources */,
 				7FA7AD172332150C0040E241 /* QuestionEndPoint.swift in Sources */,
+				7FA7AD2C2332204A0040E241 /* QuestionTableViewCell.swift in Sources */,
 				7FA7AD162332150C0040E241 /* RequestConvertible.swift in Sources */,
 				7FA7AD242332194B0040E241 /* QuestionsProtocols.swift in Sources */,
 				7FA7AD182332150C0040E241 /* ApiClient.swift in Sources */,

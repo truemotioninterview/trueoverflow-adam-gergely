@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionsViewController" customModule="TrueMotion" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="wAI-HM-G7b" id="QSW-E1-4w8"/>
                 <outlet property="unAnsweredJsQuestionsNumberLabel" destination="YAv-QY-iVR" id="hsd-kS-nl4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,12 +34,20 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wAI-HM-G7b">
+                    <rect key="frame" x="0.0" y="75" width="414" height="787"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="gg4-83-6bI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2Lw-Jk-rD8"/>
                 <constraint firstItem="gg4-83-6bI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="306-42-CFR"/>
                 <constraint firstItem="YAv-QY-iVR" firstAttribute="centerY" secondItem="gg4-83-6bI" secondAttribute="centerY" id="ALi-Zf-Sdx"/>
+                <constraint firstItem="wAI-HM-G7b" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Kz7-FX-0fR"/>
+                <constraint firstItem="wAI-HM-G7b" firstAttribute="top" secondItem="gg4-83-6bI" secondAttribute="bottom" id="RZ0-oU-MD1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wAI-HM-G7b" secondAttribute="bottom" id="UQD-HM-wp6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wAI-HM-G7b" secondAttribute="trailing" id="XDg-95-5n5"/>
                 <constraint firstItem="YAv-QY-iVR" firstAttribute="leading" secondItem="gg4-83-6bI" secondAttribute="trailing" constant="20" id="hJP-Lf-ocU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

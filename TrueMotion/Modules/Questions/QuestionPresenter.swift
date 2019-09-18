@@ -12,6 +12,7 @@ final class QuestionPresenter {
  
     private unowned let view: QuestionsView
     private let service: QuestionServiceProtocol
+    private (set) var questions: [Question] = []
     
     init(view: QuestionsView, service: QuestionServiceProtocol = QuestionService()) {
         self.view = view
@@ -33,14 +34,16 @@ private extension QuestionPresenter {
         service.questions(filter: "javascript") { [weak self] (result) in
             switch result {
             case .success(let questions):
-                let unAnsweredCount = questions.items.filter {
+                let questions = questions.items.filter {
                     $0.isAnswered == false
-                }.count
-                self?.view.showUnansweredQuestionsNumber(unAnsweredCount)
+                }
+                
+                self?.questions = questions
+                self?.view.showUnansweredQuestionsNumber(questions.count)
+                self?.view.updateQuestions()
             case .failure(let error):
                 print("\(error)")
             }
-            
         }
     }
 }

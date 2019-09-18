@@ -39,6 +39,7 @@ extension RequestConvertible {
     var jsonDecoder: JSONDecoder {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .secondsSince1970
         return decoder
     }
 
